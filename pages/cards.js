@@ -22,8 +22,8 @@ const showCards = (array) => {
       <h7 class="card-definition">${item.definition}</h7>
       <h5 class="card-catagory">${item.catagory}</h5>
       <h5 class="card-time">${item.time}</h5>
-        <i class="fas fa-edit btn btn-info" id="update-author--${item.firebaseKey}"></i>
-        <i class="btn btn-danger fas fa-trash-alt" id="delete-author-btn--${item.firebaseKey}"></i>
+      <button type="button" class="btn btn-outline-secondary" id="update-author--${item.firebaseKey}">Edit</button>
+      <button type="button" class="btn btn-outline-secondary" id="delete-author-btn--${item.firebaseKey}">Delete</button>
         
       </div>
     </div>
