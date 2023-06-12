@@ -8,6 +8,8 @@ const formEvents = () => {
       const payload = {
         card_title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
+        // catagory: document.querySelector('#catagory').value,
+        time: document.querySelector('#time').value,
       };
 
       createCard(payload).then(({ vocab }) => {
@@ -16,6 +18,20 @@ const formEvents = () => {
         updateCard(patchPayload).then(() => {
           getCards().then(showCards);
         });
+      });
+    }
+
+    if (e.target.id.includes('update-author')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        title: document.querySelector('#title').value,
+        definition: document.querySelector('#definition').value,
+        time: document.querySelector('#time').value,
+        firebaseKey,
+      };
+
+      updateCard(payload).then(() => {
+        getCards().then(showCards);
       });
     }
   });

@@ -13,6 +13,13 @@ const addCardForm = (obj = {}) => {
         <label for="image">Definition</label>
         <input type="text" class="form-control" id="definition" placeholder="definition" value="${obj.definition || ''}" required>
       </div>
+      <div class="form-group">
+        <label for="image">Definition</label>
+        <input type="text" class="form-control" id="catagory" placeholder="catagory" value="${obj.catagory || ''}" required>
+      </div>
+      <label for="image">Time Submitted</label>
+      <input type="text" class="form-control" id="time" placeholder="time" value="${obj.time || ''}" required>
+      </div>
       <button type="submit" class="btn btn-primary mt-3">Add Card</button>
     </form>`;
 
