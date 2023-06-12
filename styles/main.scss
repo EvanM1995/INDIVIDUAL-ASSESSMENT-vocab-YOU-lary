@@ -3,8 +3,70 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
-  text-align: center;
+ background-image:url(https://i.gifer.com/origin/f2/f23d923d77fa4d3f1d4ca26852c4963d.gif);
+ background-size: cover;
+}
+
+.navbar-dark .navbar-brand {
+  font-family: monospace;
+  color: coral;
+}
+
+.logout {
+  margin: 0 20px;
+  font-size: 25px;
+  color: white;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   margin-top: 100px;
+  align-content: center;
+
+  #add-button {
+    margin: 0 auto;
+    text-align: center;
+    font-family: monospace;
+  }
+
+  #form-container {
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    color: white;
+
+    #formModal {
+      color: black;
+    }
+  }
+
+  #store {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+
+    .card {
+      width: 300px;
+      margin: 5px;
+      font-family: monospace;
+      background-image: url(https://media.istockphoto.com/id/1150169632/vector/set-of-vector-black-and-white-lattice-shape-symmetric-lined-object-with-dots.jpg?s=612x612&w=0&k=20&c=7ZXaUrSneZwLmn0Z_S_FF1oXoxclhfUNaoYkbWUbmPI=);
+      color: coral
+    }
+
+    .table {
+      margin: 10px;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+
+#view {
+  width: 90%;
+  margin: auto;
 }
