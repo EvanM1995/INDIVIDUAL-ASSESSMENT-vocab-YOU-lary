@@ -1,21 +1,31 @@
-import { getCards, javascriptCards, pythonCards } from '../api/cardsData';
+import {
+  cssCards, getCards, htmlCards, javascriptCards, pythonCards
+} from '../api/cardsData';
 import { showCards } from '../pages/cards';
 import { signOut } from '../utils/auth';
 
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   document.querySelector('#All').addEventListener('click', () => {
-    getCards().then(showCards);
+    getCards(user.uid).then(showCards);
   });
 
   document.querySelector('#Python').addEventListener('click', () => {
-    pythonCards().then(showCards);
+    pythonCards(user.uid).then(showCards);
   });
 
   document.querySelector('#Javascript').addEventListener('click', () => {
-    javascriptCards().then(showCards);
+    javascriptCards(user.uid).then(showCards);
+  });
+
+  document.querySelector('#CSS').addEventListener('click', () => {
+    cssCards(user.uid).then(showCards);
+  });
+
+  document.querySelector('#HTML').addEventListener('click', () => {
+    htmlCards(user.uid).then(showCards);
   });
 };
 

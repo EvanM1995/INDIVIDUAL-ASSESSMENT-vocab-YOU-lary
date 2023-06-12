@@ -1,7 +1,7 @@
 import { createCard, getCards, updateCard } from '../api/cardsData';
 import { showCards } from '../pages/cards';
 
-const formEvents = () => {
+const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-author')) {
@@ -10,13 +10,14 @@ const formEvents = () => {
         definition: document.querySelector('#definition').value,
         catagory: document.querySelector('#catagory').value,
         time: document.querySelector('#time').value,
+        uid: user.uid,
       };
 
       createCard(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
         updateCard(patchPayload).then(() => {
-          getCards().then(showCards);
+          getCards(user.uid).then(showCards);
         });
       });
     }
@@ -29,10 +30,11 @@ const formEvents = () => {
         time: document.querySelector('#time').value,
         catagory: document.querySelector('#catagory').value,
         firebaseKey,
+        uid: user.uid
       };
 
       updateCard(payload).then(() => {
-        getCards().then(showCards);
+        getCards(user.uid).then(showCards);
       });
     }
   });

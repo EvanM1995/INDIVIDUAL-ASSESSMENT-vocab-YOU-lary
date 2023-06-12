@@ -2,8 +2,8 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-const getCards = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json`, {
+const getCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -88,6 +88,30 @@ const javascriptCards = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const cssCards = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="catagory"&equalTo="CSS"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
+const htmlCards = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="catagory"&equalTo="HTML"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 export {
   createCard,
   deleteCard,
@@ -95,5 +119,7 @@ export {
   updateCard,
   getSingleCard,
   pythonCards,
-  javascriptCards
+  javascriptCards,
+  cssCards,
+  htmlCards
 };
