@@ -2,10 +2,10 @@ import { deleteCard, getCards, getSingleCard } from '../api/cardsData';
 import addCardForm from '../components/addCardForm';
 import { showCards } from '../pages/cards';
 
-const domEvents = () => {
+const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('add-author-btn')) {
-      addCardForm();
+      addCardForm(user.uid);
     }
 
     if (e.target.id.includes('delete-author-btn')) {
@@ -15,12 +15,12 @@ const domEvents = () => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteCard(firebaseKey).then(() => {
-          getCards().then(showCards);
+          getCards(user.uid).then(showCards);
         });
       }
     }
 
-    if (e.target.id.includes('update-author-btn')) {
+    if (e.target.id.includes('update-author')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleCard(firebaseKey).then((cardObj) => addCardForm(cardObj));
     }
