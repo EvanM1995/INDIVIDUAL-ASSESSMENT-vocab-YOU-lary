@@ -6,14 +6,14 @@ const formEvents = () => {
     e.preventDefault();
     if (e.target.id.includes('submit-author')) {
       const payload = {
-        card_title: document.querySelector('#title').value,
+        title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        // catagory: document.querySelector('#catagory').value,
+        catagory: document.querySelector('#catagory').value,
         time: document.querySelector('#time').value,
       };
 
-      createCard(payload).then(({ vocab }) => {
-        const patchPayload = { firebaseKey: vocab };
+      createCard(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
 
         updateCard(patchPayload).then(() => {
           getCards().then(showCards);
@@ -27,6 +27,7 @@ const formEvents = () => {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         time: document.querySelector('#time').value,
+        catagory: document.querySelector('#catagory').value,
         firebaseKey,
       };
 

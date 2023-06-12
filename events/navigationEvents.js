@@ -1,4 +1,4 @@
-import { getCards, pythonCards } from '../api/cardsData';
+import { getCards, javascriptCards, pythonCards } from '../api/cardsData';
 import { showCards } from '../pages/cards';
 import { signOut } from '../utils/auth';
 
@@ -12,6 +12,10 @@ const navigationEvents = () => {
 
   document.querySelector('#Python').addEventListener('click', () => {
     pythonCards().then(showCards);
+  });
+
+  document.querySelector('#Javascript').addEventListener('click', () => {
+    javascriptCards().then(showCards);
   });
 };
 

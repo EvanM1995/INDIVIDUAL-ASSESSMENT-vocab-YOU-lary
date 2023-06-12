@@ -20,7 +20,7 @@ const domEvents = () => {
       }
     }
 
-    if (e.target.id.includes('update-author-btn')) {
+    if (e.target.id.includes('update-author')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleCard(firebaseKey).then((cardObj) => addCardForm(cardObj));
     }
