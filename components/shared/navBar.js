@@ -13,12 +13,20 @@ const navBar = () => {
             <li class="nav-item active">
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="sale-books">All Vocab</a>
+              <a class="nav-link" href="#" id="All">All Vocab</a>
             </li>
             <li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="favs">Favourite Vocab</a>
+              <a class="nav-link" href="#" id="Javascript">Javascript</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#" id="Python">Python</a>
+            <li>
+            <li class="nav-item">
+            <a class="nav-link" href="#" id="HTML">HTML</a>
+            <li>
+            <li class="nav-item">
+            <a class="nav-link" href="#" id="CSS">CSS</a>
             <li>
           </ul>
           <span class="navbar-text">

@@ -3,9 +3,19 @@
       "firebaseKey": "-MiYsfkjnaA-yuALS-",
       "title": "Python",
       "definition": "Python is a general-purpose language most popular for data analysis, and automate tasks",
-      "catagory": "language",
-      "uid": "WN5wBlKtYih6BHznvdCYo71DWG93"
+      "time": "7:17pm",
+      "catagory": "Python",
+      "uid": ""
 
+    },
+
+    "MaoAljnSna-Gjsdn-": {
+      "firebaseKey": "MaoAljnSna-Gjsdn-",
+      "title": "JSON",
+      "definition": "A pain in the behind",
+      "time": "9:41pm",
+      "catagory": "Javascript",
+      "uid": ""
     }
 
 }

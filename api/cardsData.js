@@ -6,17 +6,11 @@ const getCards = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab.json`, {
     method: 'GET',
     headers: {
-      'Content-Type': 'applications/json',
+      'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        resolve(Object.values(data));
-      } else {
-        resolve([]);
-      }
-    })
+    .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
 
@@ -58,9 +52,48 @@ const updateCard = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleCard = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+const pythonCards = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="catagory"&equalTo="Python"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
+const javascriptCards = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="catagory"&equalTo="Javascript"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
 export {
   createCard,
   deleteCard,
   getCards,
   updateCard,
+  getSingleCard,
+  pythonCards,
+  javascriptCards
 };
