@@ -21,7 +21,7 @@ const showCards = (array) => {
       <h5 class="card-title">${item.title}</h5>
       <h7 class="card-definition">${item.definition}</h7>
       <h5 class="card-catagory">${item.catagory}</h5>
-      <h5 class="card-time">${item.time}</h5>
+      <h8 class="card-date">${item.date}</h8>
       <button type="button" class="btn btn-outline-secondary" id="update-author--${item.firebaseKey}">Edit</button>
       <button type="button" class="btn btn-outline-secondary" id="delete-author-btn--${item.firebaseKey}">Delete</button>
         

@@ -9,8 +9,8 @@ const formEvents = (user) => {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         catagory: document.querySelector('#catagory').value,
-        time: document.querySelector('#time').value,
         uid: user.uid,
+        date: new Date()
       };
 
       createCard(payload).then(({ name }) => {
@@ -27,7 +27,6 @@ const formEvents = (user) => {
       const payload = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        time: document.querySelector('#time').value,
         catagory: document.querySelector('#catagory').value,
         firebaseKey,
         uid: user.uid
